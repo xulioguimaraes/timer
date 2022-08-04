@@ -14,10 +14,16 @@ export const Timer = () => {
 
   const handleChange = (newValue: Date | null) => {
     const year = new Date().getFullYear();
+    const today = new Date();
+    const value = new Date(newValue as Date);
+    const resultDate = value > today;
     const dateFull = String(newValue);
     const newDate = dateFull.split(" ");
     const arrayDate = newDate.map((item, index) => {
       if (index === 3) {
+        if (resultDate) {
+          return value.getFullYear();
+        }
         return year + 1;
       }
       return item;
@@ -32,6 +38,7 @@ export const Timer = () => {
     const date1 = new Date(deadline);
     const date2: any = new Date();
     const time = (date1 as any) - date2;
+    console.log(time);
 
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
