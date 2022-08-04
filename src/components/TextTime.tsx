@@ -13,16 +13,16 @@ export const TextTime = ({ days, hours, minutes, seconds }: TextTimeProps) => {
         bgcolor={"blue"}
         borderRadius={8}
         boxShadow={6}
-        p={3}
+        p={[2,3]}
         marginTop={4}
         justifyContent="space-around"
         display="flex"
         width="100%"
-        maxWidth={326}
+        maxWidth={[300, 326]}
       >
         <Typography
           color={"#FFF"}
-          fontSize={41}
+          fontSize={[35,41]}
           textAlign="center"
           component={"h1"}
         >
@@ -31,7 +31,7 @@ export const TextTime = ({ days, hours, minutes, seconds }: TextTimeProps) => {
         <Divider orientation="vertical" flexItem />
         <Typography
           color={"#FFF"}
-          fontSize={41}
+          fontSize={[35,41]}
           textAlign="center"
           component={"h1"}
         >
@@ -40,7 +40,7 @@ export const TextTime = ({ days, hours, minutes, seconds }: TextTimeProps) => {
         <Divider orientation="vertical" flexItem />
         <Typography
           color={"#FFF"}
-          fontSize={41}
+          fontSize={[35,41]}
           textAlign="center"
           component={"h1"}
         >
@@ -49,7 +49,7 @@ export const TextTime = ({ days, hours, minutes, seconds }: TextTimeProps) => {
         <Divider orientation="vertical" flexItem />
         <Typography
           color={"#FFF"}
-          fontSize={41}
+          fontSize={[35,41]}
           textAlign="center"
           component={"h1"}
         >

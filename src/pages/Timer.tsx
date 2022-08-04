@@ -66,7 +66,7 @@ export const Timer = () => {
         display={"flex"}
         flexDirection="column"
         justifyContent="center"
-        p={7}
+        p={[4,7]}
         borderRadius={8}
         boxShadow={7}
         alignItems={"center"}
