@@ -3,6 +3,7 @@ import { DesktopDateTimePicker } from "@mui/x-date-pickers";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { TextTime } from "../components/TextTime";
 
 export const Timer = () => {
   const [days, setDays] = useState(0);
@@ -38,8 +39,6 @@ export const Timer = () => {
     const date1 = new Date(deadline);
     const date2: any = new Date();
     const time = (date1 as any) - date2;
-    console.log(time);
-
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
     setMinutes(Math.floor((time / 1000 / 60) % 60));
@@ -90,53 +89,12 @@ export const Timer = () => {
           onChange={handleChange}
           renderInput={(params) => <TextField {...params} />}
         />
-        <Box
-          bgcolor={"blue"}
-          borderRadius={8}
-          boxShadow={6}
-          p={3}
-          marginTop={4}
-          justifyContent="space-around"
-          display="flex"
-          width="100%"
-          maxWidth={326}
-        >
-          <Typography
-            color={"#FFF"}
-            fontSize={41}
-            textAlign="center"
-            component={"h1"}
-          >
-            <Typography color={"#FFF"}>Dias</Typography> {days}
-          </Typography>
-          <Divider orientation="vertical" flexItem />
-          <Typography
-            color={"#FFF"}
-            fontSize={41}
-            textAlign="center"
-            component={"h1"}
-          >
-            <Typography color={"#FFF"}>Horas</Typography> {hours}
-          </Typography>
-          <Divider orientation="vertical" flexItem />
-          <Typography
-            color={"#FFF"}
-            fontSize={41}
-            textAlign="center"
-            component={"h1"}
-          >
-            <Typography color={"#FFF"}>Minutos</Typography> {minutes}
-          </Typography>
-          <Divider orientation="vertical" flexItem />
-          <Typography
-            color={"#FFF"}
-            fontSize={41}
-            textAlign="center"
-            component={"h1"}
-          >
-            <Typography color={"#FFF"}>Segundos</Typography> {seconds}
-          </Typography>
-        </Box>
+        <TextTime
+          days={days}
+          hours={hours}
+          seconds={seconds}
+          minutes={minutes}
+        />
       </Box>
     </Box>
   );
