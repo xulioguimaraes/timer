@@ -81,11 +81,9 @@ export const Timer = () => {
           Quanto tempo falta para o seu aniversario?
         </Typography>
 
-        <DesktopDateTimePicker
+        <DesktopDatePicker
           label="Data do seu aniversario"
           inputFormat="dd/MM/yyyy"
-          openTo="year"
-          ampm={false}
           value={value}
           onChange={handleChange}
           renderInput={(params) => <TextField {...params} />}
